@@ -34,7 +34,7 @@ app.use(bodyParser.json({limit: "50mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true}))
 
 app.use(cors({
-    origin:['http://localhost:4000'], //Direccion de origen de donde provienen las peticiones
+    origin:['http://44.218.29.246:1001'], //Direccion de origen de donde provienen las peticiones
     methods: ['GET', 'POST'],
     credentials: true
 }))
@@ -53,9 +53,9 @@ pool.connect((error, client, release) => {
       console.log('Conexion exitosa ')
       release()
       //estableciendo el puerto con el que trabajara nodejs
-      let puerto=4010
+      let puerto=1000
       app.listen(puerto,()=>{
-        console.log('Servidor iniciado en el http://localhost:'+puerto)
+        console.log('Servidor iniciado en el http://44.218.29.246:'+puerto)
           
         // Realizar consulta al iniciar el servidor
         pwifiRouter.consultaAutomatica();

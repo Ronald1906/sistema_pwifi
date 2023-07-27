@@ -335,4 +335,12 @@ router.get('/logs', async (req, res) => {
   }
 });
 
+router.get('/nuevo', async(req,res)=>{
+    try {
+        res.json(new Date().toISOString().substring(0,10)+' - '+ new Date().toLocaleTimeString())
+    } catch (error) {
+        console.log('Error')
+    }
+})
+
 module.exports = { router, consultaAutomatica };
